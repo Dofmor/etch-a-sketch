@@ -8,6 +8,9 @@ body {
     min-height: 100vh;
 }
 
+.content-container {
+    display: flex;
+}
 .sketch-container {
     background-color: #ffffff;
     border-color: #FE5163;
@@ -27,4 +30,8 @@ body {
     border-color: #FE5163;
     border-style: solid;
     flex: 1;
+}
+
+.fill {
+    background-color: #FE5163;
 }

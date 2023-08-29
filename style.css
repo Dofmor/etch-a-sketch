@@ -1,0 +1,30 @@
+body {
+    align-items: center;
+    background-color: #1F1F36;
+    display: flex;
+    font-family: sans-serif;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.sketch-container {
+    background-color: #ffffff;
+    border-color: #FE5163;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 500px;
+}
+
+.sketch-row {
+    display: flex;
+    flex: 1;
+}
+.sketch-square {
+    background-color: #ffffff;
+    border-color: #FE5163;
+    border-style: solid;
+    flex: 1;
+}

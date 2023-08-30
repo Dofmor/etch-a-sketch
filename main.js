@@ -1,8 +1,6 @@
 //populates the grid based on the size chosen
-function populateSquares(num) {
+function populateGrid(num) {
     const grid = document.querySelector('.sketch-container')
-    const height = grid.clientHeight 
-    const width = grid.clientWidth
 
     for (let i = 0; i < num; i++) {
         const row = document.createElement('div')
@@ -18,27 +16,45 @@ function populateSquares(num) {
 
 
     }
+    
+    const squares = document.querySelectorAll ('.sketch-square')
+
+    squares.forEach (square => square.addEventListener('mouseover', fillSquare))
 }
 
+function removeGrid () {
+    const grid = document.querySelector('.sketch-container')
+    
+    let child = grid.lastElementChild;
+    while (child) {
+        grid.removeChild(child);
+        child = grid.lastElementChild;
+    }
+}
 //fills a square in the grid by applying fill class
 function fillSquare() {
-    this.classList.add('fill')
+    this.style.background = "#FE5163"
 }
 
+//creates a new grid with a layout determined by slider value
+function newGrid () {
+    const newLayout = slider.value + " x " + slider.value
+    sliderNum.innerHTML = newLayout;
+    removeGrid()
+    populateGrid(slider.value)
+}
 //clears entire grid by removing fill class
-function clearGrid () {
+function clearSquares () {
     const squares = document.querySelectorAll ('.sketch-square')
-    squares.forEach (square => square.classList.remove('fill') )
+    squares.forEach (square => square.style.background = "#ffffff")
 }
 
-populateSquares(16)
-
-//node list of all squres in a grid
-const squares = document.querySelectorAll ('.sketch-square')
-
-squares.forEach (square => square.addEventListener('mouseover', fillSquare))
+populateGrid(16)
 
 const clearButton = document.querySelector ('#clear')
-clearButton.addEventListener('click', clearGrid)
+clearButton.addEventListener('click', clearSquares)
 
+const slider = document.querySelector ('#slider')
+const sliderNum = document.querySelector ('#slider-number')
+slider.addEventListener('change', newGrid)
 

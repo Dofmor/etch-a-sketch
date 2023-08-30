@@ -1,16 +1,54 @@
 body {
-    align-items: center;
     background-color: #1F1F36;
     display: flex;
     font-family: sans-serif;
+    flex-direction: column;
     justify-content: center;
     margin: 0;
     min-height: 100vh;
 }
 
+button {
+    background-color: #FE5163;
+    border: none;
+    border-radius: 8px;
+    color: #831a2b;
+    padding: 5px 20px;
+}
 .content-container {
     display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
 }
+
+#footer {
+    background-color: #FE5163;
+    bottom: 0;
+    color: #831A2B;
+    position:absolute;
+    text-align: center;
+    width: 100%;
+}
+.option-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    left:10%;
+    position:absolute;
+}
+
+#slider {
+    accent-color: #FE5163;
+    margin: 0px;
+    color: #FE5163;
+}
+
+#slider-number {
+    color: #ffffff;
+}
+
 .sketch-container {
     background-color: #ffffff;
     border-color: #FE5163;
@@ -27,11 +65,6 @@ body {
 }
 .sketch-square {
     background-color: #ffffff;
-    border-color: #FE5163;
-    border-style: solid;
     flex: 1;
 }
 
-.fill {
-    background-color: #FE5163;
-}
